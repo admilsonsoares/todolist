@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mysql-database:
+    image: mysql:5.7
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "todolist"
+      MYSQL_DATABASE: "todolist"
+    volumes:
+      - ./sql/init-todolist.sql:/docker-entrypoint-initdb.d/mysql_schema.sql
+    networks:
+      local_network:
+        ipv4_address: 172.18.0.2
+
+networks:
+  local_network:
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
