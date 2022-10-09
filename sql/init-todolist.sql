@@ -4,7 +4,7 @@ USE todolist;
 DROP TABLE IF EXISTS profile;
 
 CREATE TABLE profile (
-  id bigint(20) unsigned NOT NULL,
+  id tinyint NOT NULL,
   name VARCHAR(32) NOT NULL,
   description VARCHAR(32) NOT NULL,
   PRIMARY KEY (id)
@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS userapp;
 CREATE TABLE userapp (
   id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   name VARCHAR(32) NOT NULL,
-  profile_id bigint(20) unsigned DEFAULT 2,
+  profile_id tinyint DEFAULT 2,
   PRIMARY KEY (id),
   FOREIGN KEY (profile_id) REFERENCES profile(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -41,7 +41,7 @@ VALUES
 DROP TABLE IF EXISTS status;
 
 CREATE TABLE status (
-  id bigint(20) unsigned NOT NULL,
+  id tinyint NOT NULL,
   name VARCHAR(32) NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -61,7 +61,7 @@ CREATE TABLE task (
   created_at datetime NOT NULL,
   updated_at datetime DEFAULT NULL,
   user_id bigint(20) unsigned NOT NULL,
-  status_id bigint(20) unsigned DEFAULT 1,
+  status_id tinyint DEFAULT 1,
   PRIMARY KEY (id),
   FOREIGN KEY (user_id) REFERENCES userapp(id),
   FOREIGN KEY (status_id) REFERENCES status(id)
