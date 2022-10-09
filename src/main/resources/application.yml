@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: todo-list-api
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/todolist
+    username: root
+    password: todolist
+  jpa:
+    show-sql: false
+    open-in-view: false
+    generate-ddl: false
+    hibernate:
+      format_sql: true
+      dialect: org.hibernate.dialect.MySQL5Dialect
+  security:
+    user:
+      name: administrator
+      password: todolist
+      roles: manager
