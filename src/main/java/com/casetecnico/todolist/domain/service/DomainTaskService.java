@@ -1,8 +1,8 @@
-package com.casetecnico.todolist.application.domain.service;
+package com.casetecnico.todolist.domain.service;
 
-import com.casetecnico.todolist.application.domain.model.Task;
-import com.casetecnico.todolist.application.port.in.TaskService;
-import com.casetecnico.todolist.application.port.out.TaskRepository;
+import com.casetecnico.todolist.domain.model.Task;
+import com.casetecnico.todolist.domain.port.in.TaskService;
+import com.casetecnico.todolist.domain.port.out.TaskRepository;
 
 import java.util.List;
 

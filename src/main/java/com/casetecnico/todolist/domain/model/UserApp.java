@@ -1,18 +1,15 @@
-package com.casetecnico.todolist.application.domain.model;
+package com.casetecnico.todolist.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
-@Entity(name = "status")
-public class Status {
+@Entity(name = "userapp")
+public class UserApp {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,4 +17,8 @@ public class Status {
 
     @NotNull
     private String name;
+
+    @ManyToOne
+    @JoinColumn(columnDefinition = "profile_id")
+    private Profile profile;
 }

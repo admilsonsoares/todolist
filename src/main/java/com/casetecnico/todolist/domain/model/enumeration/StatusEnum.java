@@ -1,4 +1,4 @@
-package com.casetecnico.todolist.application.domain.model.enumeration;
+package com.casetecnico.todolist.domain.model.enumeration;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

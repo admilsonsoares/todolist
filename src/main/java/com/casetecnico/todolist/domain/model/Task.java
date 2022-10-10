@@ -1,4 +1,4 @@
-package com.casetecnico.todolist.application.domain.model;
+package com.casetecnico.todolist.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
