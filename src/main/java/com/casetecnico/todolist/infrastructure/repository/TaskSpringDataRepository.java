@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SpringDataRepository  extends JpaRepository<Task, Long> {
+public interface TaskSpringDataRepository extends JpaRepository<Task, Long> {
     List<Task> findByStatusName(String status);
 }

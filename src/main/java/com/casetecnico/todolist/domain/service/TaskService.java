@@ -1,8 +1,6 @@
 package com.casetecnico.todolist.domain.service;
 
-import com.casetecnico.todolist.application.StatusEnum;
 import com.casetecnico.todolist.domain.model.TaskModel;
-import com.casetecnico.todolist.infrastructure.entity.Status;
 import com.casetecnico.todolist.infrastructure.entity.Task;
 import com.casetecnico.todolist.domain.port.in.TaskPortIn;
 import com.casetecnico.todolist.domain.port.out.TaskPortOut;
@@ -14,7 +12,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Component
-public class DomainTaskService implements TaskPortIn {
+public class TaskService implements TaskPortIn {
 
     private final TaskPortOut taskPortOut;
 

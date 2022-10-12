@@ -22,15 +22,9 @@ public class TaskController {
                 taskPortIn.findByStatus(status.isPresent()? Optional.of(status.get().name()) : Optional.empty() )
         );
     }
-
     @GetMapping("/admin")
     public ResponseEntity getAllByAdmin(){
         return ResponseEntity.ok().body(taskPortIn.findAllByAdmin());
     }
 
-    @PostMapping
-    public ResponseEntity createTask(@RequestBody TaskModel taskModel){
-        taskPortIn.createTask(taskModel);
-        return ResponseEntity.ok().build();
-    }
 }
