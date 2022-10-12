@@ -60,10 +60,10 @@ CREATE TABLE task (
   description VARCHAR(32) NOT NULL,
   created_at datetime NOT NULL,
   updated_at datetime DEFAULT NULL,
-  user_id bigint(20) unsigned NOT NULL,
+  userapp_id bigint(20) unsigned NOT NULL,
   status_id tinyint DEFAULT 1,
   PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES userapp(id),
+  FOREIGN KEY (userapp_id) REFERENCES userapp(id),
   FOREIGN KEY (status_id) REFERENCES status(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

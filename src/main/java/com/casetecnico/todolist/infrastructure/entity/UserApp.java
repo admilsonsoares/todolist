@@ -1,4 +1,4 @@
-package com.casetecnico.todolist.domain.model;
+package com.casetecnico.todolist.infrastructure.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,16 +9,20 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
-@Entity(name = "profile")
-public class Profile {
+@NoArgsConstructor
+@Entity(name = "userapp")
+public class UserApp {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @NotNull
+    @Column(name = "name")
     private String name;
 
-    @NotNull
-    private String description;
+    @ManyToOne
+    @JoinColumn(columnDefinition = "profile_id")
+    private Profile profile;
 }

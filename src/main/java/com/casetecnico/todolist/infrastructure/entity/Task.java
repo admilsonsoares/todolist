@@ -1,7 +1,8 @@
-package com.casetecnico.todolist.domain.model;
+package com.casetecnico.todolist.infrastructure.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,8 +10,14 @@ import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "task")
 public class Task {
+
+    public Task(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,10 +38,10 @@ public class Task {
     private LocalDateTime updatedAt;
 
     @OneToOne
-    @JoinColumn(columnDefinition= "userapp_id")
+    @JoinColumn(name = "userapp_id", referencedColumnName = "id")
     private UserApp userApp;
 
     @OneToOne
-    @JoinColumn(columnDefinition= "status_id")
+    @JoinColumn(columnDefinition= "status_id", referencedColumnName = "id")
     private Status status;
 }
