@@ -20,11 +20,15 @@ spring:
       format_sql: true
       dialect: org.hibernate.dialect.MySQL5Dialect
 
+springdoc:
+#  use-management-port: true
+  show-actuator: true
+
 management:
   endpoints:
     web:
       exposure:
-        include: health, info, metrics
+        include: health, info, metrics, openapi, swagger-ui
   endpoint:
     health:
       show-details: always
