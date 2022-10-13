@@ -25,6 +25,15 @@ spring:
       password: 123
       roles: user
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  endpoint:
+    health:
+      show-details: always
+
 logging:
   level:
     org.hibernate.SQL: DEBUG
