@@ -5,11 +5,13 @@ import com.casetecnico.todolist.infrastructure.entity.Task;
 import com.casetecnico.todolist.domain.port.in.TaskPortIn;
 import com.casetecnico.todolist.domain.port.out.TaskPortOut;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @AllArgsConstructor
 @Component
 public class TaskService implements TaskPortIn {
@@ -18,6 +20,7 @@ public class TaskService implements TaskPortIn {
 
     @Override
     public List<Task> findByStatus(Optional<String> status) {
+        log.info("Processamento: preparando consulta de tasks com filtro = {} ", status);
         if(status.isPresent())
             return taskPortOut.findByStatus(status.get());
             return taskPortOut.findAll();
