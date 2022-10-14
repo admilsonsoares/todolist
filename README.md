@@ -13,9 +13,13 @@ Aplicação Java criada para gerenciamento de tasks:
 
 ## Funcionalidades
 
-- Autenticação e Autorização de usuários
+- Autenticação e Autorização de usuários (Pendente)
+- Cadastro de Tasks (base pré cadastrada)
 - Busca autenticada das tasks criadas pelo usuario com/sem filtro (PENDING, COMPLETED)
 - Busca autenticada das tasks de todos os usuarios por usuario com autorização de gestor
+- Busca saúde dos seus componentes (GET /healthcheck)
+- Busca indicadores de performance da API
+- Documentação Swagger
 
 
 
@@ -29,6 +33,11 @@ Aplicação Java criada para gerenciamento de tasks:
 
 **Banco de Dados:** Mysql
 
+
+## Requisitos
+
+- Docker
+- Docker-Compose
 
 ## Rodando localmente
 
@@ -46,15 +55,15 @@ Entre no diretório do projeto
   cd todo-list
 ```
 
-Execute o seguinte comando
+Execute o seguinte comando para subir a aplicação
 
 ```bash
-  ./run.sh
+  ./run.sh     
 ```
 
 ## Uso/Exemplos
 
-- O seguinte link leva a documentação do swagguer que contempla os endpoins da aplicação.
+- O seguinte link leva a documentação do swagger que contempla os endpoins da aplicação.
 
 
     http://localhost:8080/swagger-ui/index.html

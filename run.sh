@@ -7,5 +7,5 @@ docker rm -f $(docker ps -a -q)
 echo '(✔) Stopped and removed all containers'
 
 echo '(-) Starting application'
-./gradlew clean build -x test
+./gradlew clean bootJar -x test
 docker-compose up --build

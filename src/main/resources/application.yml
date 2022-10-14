@@ -8,7 +8,7 @@ spring:
     name: todo-list-api
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/todolist
+    url: jdbc:mysql://mysql-db:3306/todolist
     username: root
     password: todolist
   jpa:
